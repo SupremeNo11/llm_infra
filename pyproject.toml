@@ -1,0 +1,35 @@
+[project]
+name = "llm-infra"
+version = "0.1.0"
+description = "大语言模型结构、推理引擎构建、性能推理优化"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "transformers>=4.51",
+    "safetensors>=0.4",
+    "numpy",
+    "huggingface_hub",
+]
+
+[project.optional-dependencies]
+server = [
+    "fastapi>=0.110",
+    "uvicorn[standard]",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# 国内镜像加速（rtx 环境 PyPI 直连较慢）
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true

@@ -218,3 +218,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---- llm_infra ----
+# 模型权重与大文件（不入库，用 scripts/download_model.py 重新获取）
+models/
+*.safetensors
+*.bin
+*.ckpt
+*.gguf
+
+# 数据与实验产物
+data/
+runs/
+outputs/
